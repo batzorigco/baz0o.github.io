@@ -2,12 +2,31 @@
 <html>
 <head>
     <title>Centered Lottie Test</title>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 
 <body>
     <h1>Hello World = 2</h1>
 <p>I'm hosted with GitHub Pages.</p>
-<lottie-player src="scene1.json"  background="transparent"  speed="1"  style="width: 1080px; height: 864px;"  loop autoplay></lottie-player>
+<div id="svgContainer" style="width: 1080px; height: 864px;margin: auto;"></div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.8.1/lottie.min.js"></script>
+<script>
+    var svgContainer = lottie.loadAnimation({
+  container: document.getElementById('svgContainer'), // the dom element that will contain the animation
+  renderer: 'svg',
+  rendererSettings : {
+    filterSize: {
+      width: '200%',
+      height: '200%',
+      x: '-50%',
+      y: '-50%',
+    }
+  },
+  loop: true,
+  autoplay: true,
+  path: 'scene1.json' // the path to the animation json
+});
+</script>
 </body>
 </html>
